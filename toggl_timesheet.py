@@ -68,19 +68,19 @@ for id in data['data']:
 #decision tree for the service categories
     if billable == str("True"):
         browser.find_by_id('00N37000006A1dS').select("Billable")
-        # browser.find_by_name('save').first.click()
+        browser.find_by_name('save').first.click()
     elif client == str("Thomson Reuters"):
         browser.find_by_id('00N37000006A1dS').select("Non-Billable")
         browser.find_by_id('00N37000006A1dX').select(task)
-        #browser.find_by_name('save').first.click()
+        browser.find_by_name('save').first.click()
     else:
         browser.find_by_id('00N37000006A1dS').select("Operations")
         browser.find_by_id('00N37000006A1dX').select("Client Travel")
-        # browser.find_by_name('save').first.click()
+        browser.find_by_name('save').first.click()
     time.sleep(1)
-    # # with open("C:\\Users\\U0127576\Dropbox\Programming\Python\Salesforce Timesheet\TimesheetLog.txt", "a") as myfile:
-    # #     myfile.write('Row #' + str(reader.line_num) + " | " + row['Project'] + " | " + row['Description'] + " | " + row['Date'])
-    # #     myfile.write("\n")
+    with open("C:\\Users\\U0127576\Dropbox\Programming\Python\Salesforce Timesheet\TimesheetLog.txt", "a") as myfile:
+        myfile.write('Row #' + str(reader.line_num) + " | " + row['Project'] + " | " + row['Description'] + " | " + row['Date'])
+        myfile.write("\n")
 
 
 
